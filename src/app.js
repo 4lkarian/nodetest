@@ -14,7 +14,8 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.send('Api En estado activo.');
-  ///res.sendFile(__dirname+'/index.html');
+  res.send('Base de Datos conectada...');
+  res.send('Vista Conectada...');
   //res.redirect('/index.html');
 });
 
