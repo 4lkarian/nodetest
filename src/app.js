@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
 });
 
 // Redirigir a la página HTML
-app.get('/redirect', (req, res) => {
-  res.redirect('/index.html'); // Asegúrate de que este archivo exista
+app.get('/home', function (req, res) {
+  res.sendFile(__dirname + './index.html'); // Asegúrate de que este archivo exista
 });
 
 
