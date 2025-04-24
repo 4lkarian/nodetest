@@ -10,6 +10,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.send('Api En estado activo');
+  res.sendFile(__dirname+'/index.html');
 });
 
 // Redirigir a la página HTML
