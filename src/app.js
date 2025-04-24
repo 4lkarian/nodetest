@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 }
 );
 app.get('/ping', async (req, res) => {
-    const resw = await pool.query('SELECT * FROM alummos');
+    const resw = await pool.query('SELECT * FROM alumnos');
 if(resw.length>0){
   res.send("conectado");
 }
