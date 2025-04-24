@@ -19,7 +19,7 @@ app.get('/redirect', (req, res) => {
 
 // O puedes redirigir a otra página
 app.get('/pagina', (req, res) => {
-  res.redirect('/pagina.html'); // Asegúrate de que este archivo exista
+  res.redirect('/index.html'); // Asegúrate de que este archivo exista
 });
 
 app.get('/ping', async (req, res) => {
