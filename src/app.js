@@ -50,6 +50,18 @@ app.post('/add/:usid/:name/:edad/:cal', (req, res) => {
     });
   });
 
+app.get('/alumno/:id', (req, res)=> {
+const { id } = req.params;
+  db.query('SELECT * FROM alumnos WHERE id = ?', [id], (err, result)=>{
+    if(err){
+      return res.status(500).json({ error: err.message });
+    }if(result.length === 0){
+      return res.status(404).json({ message: 'Item No encontrado'});
+    }
+    res.json(result[0]);
+  });
+});
+
 
 app.listen(PORT, () => {
   console.log('Server is running on port ' + PORT);
