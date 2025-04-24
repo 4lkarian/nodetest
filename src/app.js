@@ -13,9 +13,8 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-  res.send('Api En estado activo.');
-  res.send('Base de Datos conectada...');
-  res.send('Vista Conectada...');
+  res.send('Api En estado activo....'+'Base de datos Conectada');
+  
   //res.redirect('/index.html');
 });
 
