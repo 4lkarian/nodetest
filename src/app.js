@@ -7,7 +7,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   //res.send('Server live');
-  res.redirect('index.html');
+  res.redirect('src/index.html');
 }
 );
 app.get('/ping', async (req, res) => {
