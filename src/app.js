@@ -52,7 +52,7 @@ app.post('/add/:usid/:name/:edad/:cal', (req, res) => {
 
 app.get('/alumno/:id', (req, res)=> {
 const { id } = req.params;
-  const result = await pool.query('SELECT * FROM alumnos WHERE id = ?', [id], (err, result)=>{
+  const result = pool.query('SELECT * FROM alumnos WHERE id = ?', [id], (err, result)=>{
     if(err){
       return res.status(500).json({ error: err.message });
     }if(result.length === 0){
