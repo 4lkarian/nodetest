@@ -10,14 +10,16 @@ app.get('/', (req, res) => {
 }
 );
 app.get('/ping', async (req, res) => {
-    const resw = await pool.query('SELECT "hello world" AS result');
+    const resw = await pool.query('SELECT * FROM alummos');
+if(resw.length>0){
+  res.send("conectado");
+}
     console.log(resw);
-    res.send('Server live');
+    //res.send('Server live');
   }
   );
 
 
 app.listen(PORT);
 console.log('Server is running on port ' + PORT); 
-
 
