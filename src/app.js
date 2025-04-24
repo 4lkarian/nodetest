@@ -36,6 +36,17 @@ app.get('/ping', async (req, res) => {
   }
 });
 
+app.post('/add/:usid/:name/:edad/:cal', (req, res) => {
+    const { id, nombre, edad, cal } = req.params;
+    db.query('INSERT INTO alumnos (id, nombre, edad,cal) VALUES (?, ?, ?,?)', [id, nombre, edad, cal], (err, result) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.status(201).json({ message: 'Item creado', id: result.insertId });
+    });
+  });
+
+
 app.listen(PORT, () => {
   console.log('Server is running on port ' + PORT);
 });
