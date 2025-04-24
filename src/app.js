@@ -9,7 +9,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-  res.send('Server live');
+  res.send('Api En estado activo');
 });
 
 // Redirigir a la página HTML
