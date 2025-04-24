@@ -62,6 +62,17 @@ const { id } = req.params;
   });
 });
 
+// Eliminar (DELETE)
+app.delete('/del/:id', async (req, res) => {
+    try {
+        const item = await Item.findByIdAndDelete(req.params.id);
+        if (!item) return res.status(404).send('Item no encontrado');
+        res.json(item);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 
 app.listen(PORT, () => {
   console.log('Server is running on port ' + PORT);
