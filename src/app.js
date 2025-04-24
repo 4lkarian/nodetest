@@ -6,7 +6,7 @@ import path from 'path';
 const app = express();
 
 // Middleware para servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) => {
   res.send('Server live');
@@ -17,10 +17,7 @@ app.get('/redirect', (req, res) => {
   res.redirect('/index.html'); // Asegúrate de que este archivo exista
 });
 
-// O puedes redirigir a otra página
-app.get('/pagina', (req, res) => {
-  res.redirect('/index.html'); // Asegúrate de que este archivo exista
-});
+
 
 app.get('/ping', async (req, res) => {
   try {
