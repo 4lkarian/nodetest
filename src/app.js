@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 // Redirigir a la página HTML
 app.get('/home', function (req, res) {
-  //res.sendFile('./index.html'); // Asegúrate de que este archivo exista
+  res.sendFile(__dirname + './index.html'); // Asegúrate de que este archivo exista
 });
 
 
