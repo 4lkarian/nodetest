@@ -9,14 +9,14 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-  //res.send('Api En estado activo.');
+  res.send('Api En estado activo.');
   ///res.sendFile(__dirname+'/index.html');
-  res.redirect('/index.html');
+  //res.redirect('/index.html');
 });
 
 // Redirigir a la página HTML
 app.get('/home', function (req, res) {
-  res.sendFile('./index.html'); // Asegúrate de que este archivo exista
+  //res.sendFile('./index.html'); // Asegúrate de que este archivo exista
 });
 
 
